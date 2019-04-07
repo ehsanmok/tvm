@@ -19,6 +19,7 @@ extern crate failure;
 extern crate lazy_static;
 extern crate ndarray as rust_ndarray;
 extern crate num_traits;
+extern crate register_macro;
 extern crate tvm_common;
 
 use std::{

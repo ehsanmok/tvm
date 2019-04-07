@@ -21,6 +21,7 @@ lazy_static = "1.1.0"
 ndarray = "0.12.1"
 num-traits = "0.2"
 tvm-common = { version = "0.1.0", path = "../common/", features = ["bindings"] }
+register_macro = { version = "0.1.0", path = "register_macro" }
 
 [features]
 blas = ["ndarray/blas"]
