@@ -17,9 +17,13 @@ pub fn register_global_func(_attr: TokenStream, item: TokenStream) -> TokenStrea
     let inputs = &decl.inputs;
     let output = &decl.output;
 
-    let registered = quote! {
+    let reg_fn = quote! {
         #fn_token #ident(#inputs) #output #block
-        ::tvm::function::register(#ident, stringify!("{}", #ident).to_owned(), false).unwrap();
+    };
+
+    let registered = quote! {
+        use ::tvm_frontend::function::register;
+        register(#reg_fn, stringify!("{}", #ident).to_owned(), false).unwrap();
     };
 
     registered.into()
